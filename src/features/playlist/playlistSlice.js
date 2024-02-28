@@ -1,9 +1,35 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = {
-  playlists: {},
-  currentPlaylistId: null,
-};
+// Example tracks for our playlists
+const exampleTracks = [
+    { name: 'Track 1', artist: 'Artist 1' },
+    { name: 'Track 2', artist: 'Artist 2' },
+    { name: 'Track 3', artist: 'Artist 3' },
+  ];
+  
+  // Example playlists
+  const examplePlaylists = {
+    '1': {
+      id: '1',
+      name: 'Chill Vibes',
+      tracks: [exampleTracks[0], exampleTracks[1]],
+    },
+    '2': {
+      id: '2',
+      name: 'Workout Energy',
+      tracks: [exampleTracks[1], exampleTracks[2]],
+    },
+    '3': {
+      id: '3',
+      name: 'Study Session',
+      tracks: [exampleTracks[0], exampleTracks[2]],
+    },
+  };
+  
+  const initialState = {
+    playlists: examplePlaylists,
+    currentPlaylistId: null,
+  };
 
 const playlistSlice = createSlice({
   name: 'playlist',
